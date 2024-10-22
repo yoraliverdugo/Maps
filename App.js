@@ -4,11 +4,10 @@ import { StyleSheet, Text, View } from 'react-native';
 import MapView, {Marker, Polyline} from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
 import {GOOGLE_MAPS_KEY} from '@env'; 
-
 const carImage = require('./assets/image/car.png')
 
 
-export default async function App() { 
+export default  function App() { 
 
   const [origin, setOrigin] = React.useState ({  
     latitude: 32.479722222222 ,
@@ -70,23 +69,22 @@ export default async function App() {
         
          />   
 
-       <MapViewDirections 
-         origin={origin} 
-         destination={destination} 
-         apikey={GOOGLE_MAPS_KEY} 
-         strokeColor='pink'
-         strokeColors={6}
-         
-         
-         
-         /> 
-      <Polyline 
+         <MapViewDirections
+          origin={origin}
+          destination={destination}
+          apikey={GOOGLE_MAPS_KEY}
+          strokeColor="purple"
+          strokeWidth={5}
+        /> 
+
+       
+     {/*  <Polyline 
          coordinates={[origin, destination]}
          strokeColor='purple' 
          strokeWidth={6}
          
          
-         /> 
+         />  */}
       </MapView>
     </View>
   );
